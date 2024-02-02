@@ -49,9 +49,6 @@ class DataIngestion:
             return CustomException(e, sys)
 
 
-if __name__ == '__main__':
-    obj = DataIngestion()
-    data_train, data_test = obj.initiate_data_ingestion()
 
 
 
