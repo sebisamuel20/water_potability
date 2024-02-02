@@ -11,8 +11,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 from dataclasses import dataclass 
 
-from src.components.data_ingestion import DataIngestionConfig
-from src.components.data_ingestion import DataIngestion
 
 @dataclass
 class DataTransformationConfig:
@@ -99,10 +97,3 @@ class DataTransformation:
         except Exception as e:
             raise CustomException(e,sys)
 
-
-if __name__ == '__main__':
-    obj = DataIngestion()
-    data_train, data_test = obj.initiate_data_ingestion()
-
-    dat = DataTransformation()
-    train_arr, test_arr, preproc_obj = dat.initiate_data_transformation(data_train, data_test)
