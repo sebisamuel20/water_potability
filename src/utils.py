@@ -35,7 +35,7 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
             para=param[list(models.keys())[i]]
 
             logging.info("Checking the best hyperparameters")
-            gs = GridSearchCV(model,para,cv=3)
+            gs = GridSearchCV(model,para,cv=5)
             gs.fit(X_train,y_train)
             logging.info("Best hyperparameters found")
 

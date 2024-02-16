@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from src.exception import CustomException
 from src.logger import logging
 from src.utils import save_object, evaluate_models
+import numpy as np
 from sklearn.metrics import (precision_score, recall_score, f1_score)
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
@@ -55,8 +56,8 @@ class ModelTrainer:
 
             params = {
                 "Logistic Regression": {
-                    #  'C':  np.logspace(-4, 4, 50)
-                    #  'penalty' : ['l1', 'l2']
+                    #  'C':  np.logspace(-4, 4, 50),
+                    #  'penalty' : ['l2']
                 },
                 "Naive Bayes": {},
                 "K nearest Classifier": {
@@ -65,13 +66,13 @@ class ModelTrainer:
                 "Decision Tree Classifier": {
                     # 'max_depth': [2,3,5,7,11,13],
                     # 'min_samples_split': [2,3,5],
-                    # 'max_features': [None, 'sqrt', 'log2']
+                    # 'max_features': ['sqrt', 'log2']
                 },
                 "Random Forest Classifier": {
                     # 'n_estimators': [50,100,150,200,250],
-                    # 'max_depth': [None, 1, 4, 7, 10, 20],
+                    # 'max_depth': [1, 4, 7, 10, 20],
                     # 'min_samples_split': [2,3,5,6],
-                    # 'max_features': [None, 'auto', 'sqrt', 'log2']
+                    # 'max_features': ['sqrt', 'log2']
                 },
                 "Gradient Boosting Classifier": {
                     # 'learning_rate':  [.01,.05,.10,.001],
@@ -79,11 +80,10 @@ class ModelTrainer:
                     # 'subsample': [0.1, 0.2, 0.3, 0.5, 0.7, 0.8], 
                     # 'criterion': ["friedman_mse", "squared_error"],
                     # 'max_depth': [1,3,5,9,15],
-                    # 'max_features': [None, 'sqrt', 'log2', 'auto']
+                    # 'max_features': ['sqrt', 'log2']
                 },
                 "XGBoost Classifier": {
-                    # 'learning_rate':  [.01,.05,.10,.001],
-                    # 'n_estimators':[100, 200, 256, 300, 500]
+                    
                 },
             }
 
