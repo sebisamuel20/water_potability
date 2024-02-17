@@ -9,4 +9,4 @@ dill
 streamlit
 
 
--e .
+#-e .
