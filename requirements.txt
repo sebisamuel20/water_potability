@@ -6,6 +6,5 @@ scikit-learn==1.4.0
 catboost
 xgboost
 dill
-pickle5
 streamlit
 -e .
